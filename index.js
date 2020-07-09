@@ -12,6 +12,7 @@ var PORT = process.env.PORT || 4000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+const idCounter = 0
 
 const tableInfo = [
     {
@@ -56,6 +57,26 @@ app.get("/api/waitlist", function (req, res) {
     return res.json(waitList);
 });
 
+
+app.post('/api/tables', function (req, res){
+    var newTable = req.body;
+
+    // newTable.id = newTable.name.replace(/\s+/g, "").toLowerCase();
+
+    // console.log(newTable);
+
+    tableInfo.push(newTable)
+
+    res.json(newTable)
+});
+
+app.post("/api/waitlist", function (req, res) {
+    var newTable = req.body;
+    newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
+    tableInfo.push(newTable);
+    res.json(newTable);
+
+});
 
 // Starts the server to begin listening
 // =============================================================
