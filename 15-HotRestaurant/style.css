@@ -1,0 +1,14 @@
+#mainImg {
+    background-image: url("https://img.pngio.com/millions-of-png-images-backgrounds-and-vectors-for-free-download-food-background-png-588_260.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+
+#restName{
+    color: rgb(231, 119, 15);
+}
+
+#resLine{
+    color: tomato;
+}
