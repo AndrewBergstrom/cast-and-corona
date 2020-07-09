@@ -12,7 +12,12 @@ var PORT = 4000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
+app.get("/", function(req, res) {
+    res.send("Welcome to the home page!")
+    // res.sendFile(path.join(__dirname, "home.html"));
+    
+  });
+  
 
 
 // Starts the server to begin listening
